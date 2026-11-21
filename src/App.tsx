@@ -43,7 +43,14 @@ const MainExperience: React.FC = () => {
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          setPhotos(parsed);
+          const normalized = parsed.map((p) => {
+            const def = defaultPhotos.find((dp) => dp.id === p.id);
+            if (def && p.src.includes('/images/photo-')) {
+              return { ...p, src: def.src };
+            }
+            return p;
+          });
+          setPhotos(normalized);
         }
       }
     } catch {}

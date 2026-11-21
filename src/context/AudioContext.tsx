@@ -44,11 +44,14 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     audio.volume = volume;
     audio.preload = 'auto';
 
-    // Candidate audio sources in order
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+
+    // Candidate audio sources in order with deployment base URL
     const sources = [
-      '/music/unakkenna-venum-sollu.mp3',
-      '/music/aanandha-yaazhai.mp3',
-      '/music/aanandha-yazhai.mp3'
+      `${cleanBase}music/unakkenna-venum-sollu.mp3`,
+      `${cleanBase}music/aanandha-yaazhai.mp3`,
+      `${cleanBase}music/aanandha-yazhai.mp3`
     ];
 
     let currentSourceIdx = 0;

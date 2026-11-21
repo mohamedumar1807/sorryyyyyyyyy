@@ -56,7 +56,7 @@ A cinematic, emotional, interactive fairytale website designed and built as a pe
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/mohamedumar1807/sorryyyyyyyyy.git
 
 # Navigate to project folder
 cd "thanga pulla"

@@ -59,10 +59,17 @@ export const chapters: ChapterMeta[] = [
   }
 ];
 
+const getAssetUrl = (relativePath: string) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  const cleanPath = relativePath.startsWith('/') ? relativePath.slice(1) : relativePath;
+  return `${cleanBase}${cleanPath}`;
+};
+
 export const defaultPhotos: SisterPhoto[] = [
   {
     id: 'photo-1-childhood',
-    src: '/images/photo-1-childhood.jpg',
+    src: getAssetUrl('images/photo-1-childhood.jpg'),
     alt: 'Childhood school photograph with blue background and blue ribbons',
     title: 'Where It All Began',
     caption: 'From this little girl to the beautiful princess you are today. ❤️',
@@ -72,7 +79,7 @@ export const defaultPhotos: SisterPhoto[] = [
   },
   {
     id: 'photo-2-flower',
-    src: '/images/photo-2-flower.png',
+    src: getAssetUrl('images/photo-2-flower.png'),
     alt: 'Photograph with long dark hair and pink flower sticker',
     title: 'Pure Radiance',
     caption: 'That beautiful smile of my Thanga Pulla.',
@@ -82,7 +89,7 @@ export const defaultPhotos: SisterPhoto[] = [
   },
   {
     id: 'photo-3-green',
-    src: '/images/photo-3-green.jpg',
+    src: getAssetUrl('images/photo-3-green.jpg'),
     alt: 'Close-up photograph with green outfit',
     title: 'Grace & Elegance',
     caption: 'My beautiful princess, forever special.',
@@ -92,7 +99,7 @@ export const defaultPhotos: SisterPhoto[] = [
   },
   {
     id: 'photo-4-baby',
-    src: '/images/photo-4-baby.jpg',
+    src: getAssetUrl('images/photo-4-baby.jpg'),
     alt: 'Photograph of sister holding a baby',
     title: 'Gentle & Caring Heart',
     caption: 'A beautiful little moment worth keeping.',
@@ -102,7 +109,7 @@ export const defaultPhotos: SisterPhoto[] = [
   },
   {
     id: 'photo-5-thalapathy',
-    src: '/images/photo-5-thalapathy.jpg',
+    src: getAssetUrl('images/photo-5-thalapathy.jpg'),
     alt: 'Sister wearing black Thalapathy Verse T-shirt from behind',
     title: 'The Ultimate Fan',
     caption: 'My favourite Thalapathy fan. ❤️',
