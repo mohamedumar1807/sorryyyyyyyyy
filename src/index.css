@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --blush-pink: #F7C1D7;
+    --vibrant-rose: #E77AA5;
+    --royal-rose: #C02F70;
+    --deep-berry: #76264F;
+    --rich-lavender: #A88AE0;
+    --deep-lavender: #7048A8;
+    --royal-gold: #E8B957;
+    --rose-gold: #C58B73;
+    --deep-plum: #382235;
+    --warm-cream: #FFF6F0;
+    --pure-white: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background: radial-gradient(circle at 15% 10%, #F7C1D7 0%, #FFF6F0 45%, #EAE3FA 100%);
+    color: var(--deep-plum);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--deep-plum);
+  }
+
+  .font-letter {
+    font-family: 'Cormorant Garamond', Garamond, serif;
+  }
+
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+@layer components {
+  /* High-Contrast Solid Primary Button (#C02F70) */
+  .btn-royal-primary {
+    background-color: #C02F70 !important;
+    color: #FFFFFF !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    min-height: 48px;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    border: 2px solid #FFFFFF !important;
+    box-shadow: 0 6px 20px -2px rgba(192, 47, 112, 0.5), 0 2px 6px rgba(56, 34, 53, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 25;
+  }
+  .btn-royal-primary:hover {
+    background-color: #941E53 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -2px rgba(148, 30, 83, 0.6), 0 4px 10px rgba(56, 34, 53, 0.3);
+  }
+  .btn-royal-primary:active {
+    transform: translateY(1px) scale(0.97);
+  }
+
+  /* High-Contrast Solid Secondary Button (#7048A8) */
+  .btn-royal-secondary {
+    background-color: #7048A8 !important;
+    color: #FFFFFF !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    min-height: 48px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    border: 2px solid #FFFFFF !important;
+    box-shadow: 0 6px 20px -2px rgba(112, 72, 168, 0.5), 0 2px 6px rgba(56, 34, 53, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 25;
+  }
+  .btn-royal-secondary:hover {
+    background-color: #54347F !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -2px rgba(84, 52, 127, 0.6), 0 4px 10px rgba(56, 34, 53, 0.3);
+  }
+  .btn-royal-secondary:active {
+    transform: translateY(1px) scale(0.97);
+  }
+
+  /* High-Contrast Gold Button (#E8B957) */
+  .btn-royal-gold {
+    background-color: #E8B957 !important;
+    color: #382235 !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+    min-height: 48px;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    border: 2px solid #382235 !important;
+    box-shadow: 0 6px 20px -2px rgba(232, 185, 87, 0.6), 0 2px 6px rgba(56, 34, 53, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 25;
+  }
+  .btn-royal-gold:hover {
+    background-color: #D6A33C !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -2px rgba(214, 163, 60, 0.7);
+  }
+  .btn-royal-gold:active {
+    transform: translateY(1px) scale(0.97);
+  }
+
+  /* High-Contrast Icon Button (min 44px) */
+  .btn-icon-control {
+    background-color: #FFFFFF !important;
+    color: #382235 !important;
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    min-height: 46px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid #C02F70 !important;
+    box-shadow: 0 4px 12px rgba(56, 34, 53, 0.2);
+    position: relative;
+    z-index: 25;
+  }
+  .btn-icon-control:hover {
+    background-color: #F7C1D7 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(192, 47, 112, 0.35);
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .perspective-1500 {
+    perspective: 1500px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* High-Contrast Rich Glassmorphism */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(192, 47, 112, 0.35);
+    box-shadow: 0 16px 40px -8px rgba(118, 38, 79, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.8);
+  }
+
+  .glass-card-gold {
+    background: rgba(255, 246, 240, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2.5px solid rgba(232, 185, 87, 0.7);
+    box-shadow: 0 18px 45px -10px rgba(197, 139, 115, 0.35), 0 0 25px rgba(232, 185, 87, 0.35);
+  }
+}
+
+/* Custom High-Contrast Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C02F70;
+  border-radius: 9999px;
+  border: 2px solid #FFF6F0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #941E53;
+}
